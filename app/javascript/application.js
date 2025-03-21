@@ -1,4 +1,9 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-document.addEventListener('DOMContentLoaded', function() {
-    M.AutoInit(); // Inicializa automáticamente todos los componentes de Materialize
-  });
+// Configurar Importmap en Rails 7
+document.addEventListener('turbolinks:load', function() {
+  M.AutoInit(); // Inicializa automáticamente todos los componentes de Materialize
+  
+  // Inicializar Sidenav
+  let elems = document.querySelectorAll('.sidenav');
+  M.Sidenav.init(elems);
+
+});
