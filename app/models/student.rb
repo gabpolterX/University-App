@@ -7,4 +7,8 @@ class Student < ApplicationRecord
             length: { maximum: 105 },
             # Verify email with ruby's standard library regex.
             format: { with: URI::MailTo::EMAIL_REGEXP })
+    
+    has_secure_password
+    has_many :student_courses
+    has_many :courses, through: :student_courses
 end
